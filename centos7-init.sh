@@ -4,6 +4,8 @@ pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 systemctl stop firewalld
 systemctl disable firewalld
 
+rm -rf /usr/lib/systemd/system/shadowsocks.service
+
 cat >> /usr/lib/systemd/system/shadowsocks.service <<EOF
 [Unit]
 Description=Shadowsocks Server
