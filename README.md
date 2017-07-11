@@ -4,7 +4,7 @@
 
 disable firewalld
 
-set Shadowsocks as systemd Service 
+set shadowsocks as systemd service 
 
 ```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/lshen1120/shadowsocks-init/master/centos7-init.sh)" {port} {password}
