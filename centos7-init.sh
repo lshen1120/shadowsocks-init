@@ -1,5 +1,6 @@
 #!/bin/sh
-yum install git -y
+yum install git python-pip -y
+pip install --upgrade pip
 pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 systemctl stop firewalld
 systemctl disable firewalld
@@ -24,5 +25,9 @@ UMask=0027
 [Install]
 WantedBy=multi-user.target
 EOF
+systemctl stop shadowsocks
 systemctl enable shadowsocks
 systemctl start shadowsocks
+
+echo "port:$1 password:$2 aes-256-cfb"
+echo "enjoy your shadowsocks service"
