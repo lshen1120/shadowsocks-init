@@ -1,5 +1,9 @@
 #!/bin/sh
 yum install git python-pip -y
+command -v pip >/dev/null 2>&1 || {
+  curl -O https://bootstrap.pypa.io/get-pip.py
+  python get-pip.py
+}
 pip install --upgrade pip
 pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 systemctl stop firewalld
